@@ -4,82 +4,288 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Website</title>
-    
+
+    <title>Nicole | Art & Code</title>
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f1f5f9;
-            color: #1e293b;
-            text-align: center;
-            padding: 60px 20px;
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .container {
-            max-width: 600px;
-            margin: auto;
-            background: white;
-            padding: 40px 20px;
-            border-radius: 16px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            color: #0891b2;
-        }
-
-        p {
+        body {
+            font-family: "Trebuchet MS", sans-serif;
+            background: #faf8f5;
+            color: #292722;
             line-height: 1.7;
         }
 
-        button {
-            background: #0891b2;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-size: 16px;
-            cursor: pointer;
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 8%;
+            border-bottom: 1px solid #e8e2da;
         }
 
-        button:hover {
-            background: #0e7490;
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: #514b43;
+            text-decoration: none;
+            margin-left: 24px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #bd705b;
+        }
+
+        .hero {
+            padding: 110px 8% 100px;
+            text-align: center;
+            background: #f1e9df;
+        }
+
+        .tag {
+            color: #a45f4d;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 12px;
+        }
+
+        h1 {
+            font-size: clamp(42px, 8vw, 78px);
+            line-height: 1.15;
+            margin: 22px 0;
+            font-weight: 600;
+        }
+
+        h1 span {
+            color: #b86f59;
+            font-family: Georgia, serif;
+            font-style: italic;
+        }
+
+        .hero p {
+            max-width: 520px;
+            margin: 0 auto 30px;
+            color: #625b52;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #292722;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .button:hover {
+            background: #b86f59;
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 75px 8%;
+        }
+
+        .section-label {
+            color: #a45f4d;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: 34px;
+            margin: 10px 0 35px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            padding: 32px;
+            border: 1px solid #e7dfd5;
+            border-radius: 12px;
+            background: #fffdf9;
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px #2927220c;
+        }
+
+        .card .symbol {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #6b645b;
+            font-size: 14px;
+        }
+
+        .about {
+            background: #e9eee7;
+        }
+
+        .about p {
+            max-width: 650px;
+            color: #4f594e;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            color: #6b645b;
+            margin-bottom: 25px;
         }
 
         footer {
-            margin-top: 30px;
-            color: #64748b;
-            font-size: 14px;
+            text-align: center;
+            padding: 25px;
+            color: #847c72;
+            font-size: 12px;
+            border-top: 1px solid #e8e2da;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+
+            .hero {
+                padding: 75px 7%;
+            }
+
+            section {
+                padding: 55px 7%;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            h2 {
+                font-size: 29px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <h1>Hello, World! 👋</h1>
 
-        <p>
-            Welcome to my first website!
-            I'm testing my website using GitHub Pages.
-        </p>
+    <header>
+        <div class="logo">NICOLE.</div>
 
-        <button onclick="showMessage()">
-            Click Me!
-        </button>
+        <nav>
+            <a href="#work">My Work</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-        <p id="message"></p>
+    <main>
+        <section class="hero">
+            <div class="tag">Student · Artist · Coder</div>
 
-        <footer>
-            Built with HTML, CSS and JavaScript
-        </footer>
-    </div>
+            <h1>Hello, I'm <span>Nicole.</span></h1>
 
-    <script>
-        function showMessage() {
-            document.getElementById("message").textContent =
-                "Success! Your website is working perfectly! 🎉";
-        }
-    </script>
+            <p>
+                An Ontario high school student who loves
+                drawing, coding, and turning little ideas
+                into something creative.
+            </p>
+
+            <a href="#work" class="button">Explore My World ↓</a>
+        </section>
+
+        <section id="work">
+            <div class="section-label">A little bit of everything</div>
+            <h2>Things I love creating.</h2>
+
+            <div class="grid">
+                <article class="card">
+                    <div class="symbol">✿</div>
+                    <h3>Art & Illustration</h3>
+                    <p>
+                        Sketches, drawings, experiments with
+                        color, and little ideas brought to life
+                        on paper.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <div class="symbol">&lt;/&gt;</div>
+                    <h3>Code & Creativity</h3>
+                    <p>
+                        Learning to code, building websites,
+                        solving problems, and exploring what
+                        technology can create.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="section-label">A little about me</div>
+            <h2>Still learning, always creating.</h2>
+
+            <p>
+                Hi! I'm Nicole, an Ontario high school student
+                with a passion for both art and technology.
+                I enjoy drawing, experimenting with new ideas,
+                and learning how to bring things to life
+                through code. This website is my little corner
+                of the internet to share what I make and what
+                I discover along the way.
+            </p>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="section-label">Let's connect</div>
+            <h2>Thanks for stopping by!</h2>
+
+            <p>
+                More art, more code, and more ideas coming soon.
+            </p>
+
+            <a href="#top" class="button"
+               onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+                Back to Top ↑
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        © 2026 Nicole · Made with creativity and code ♡
+    </footer>
+
 </body>
 </html>
